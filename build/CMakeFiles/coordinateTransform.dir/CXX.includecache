@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/xbbao/SLAM_book_ws/src/myVIOSLAM/src/coordinateTransform.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+eigen3/Eigen/Core
+-
+eigen3/Eigen/Geometry
+-
+
