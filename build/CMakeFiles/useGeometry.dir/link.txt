@@ -1,1 +1,0 @@
-/usr/bin/c++  -std=c++14 -O3 -DNDEBUG  -rdynamic CMakeFiles/useGeometry.dir/src/useGeometry.cpp.o  -o useGeometry 

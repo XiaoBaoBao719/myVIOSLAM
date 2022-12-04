@@ -1,6 +1,3 @@
 /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/rebuild_cache.dir
 /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/edit_cache.dir
-/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/plotTrajectory.dir
-/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/coordinateTransform.dir
-/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/useGeometry.dir
-/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/eigenMatrix.dir
+/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles/PoseEstimator2d2d.dir

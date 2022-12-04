@@ -53,10 +53,7 @@ CMAKE_BINARY_DIR = /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/plotTrajectory.dir/all
-all: CMakeFiles/coordinateTransform.dir/all
-all: CMakeFiles/useGeometry.dir/all
-all: CMakeFiles/eigenMatrix.dir/all
+all: CMakeFiles/PoseEstimator2d2d.dir/all
 
 .PHONY : all
 
@@ -66,120 +63,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/plotTrajectory.dir/clean
-clean: CMakeFiles/coordinateTransform.dir/clean
-clean: CMakeFiles/useGeometry.dir/clean
-clean: CMakeFiles/eigenMatrix.dir/clean
+clean: CMakeFiles/PoseEstimator2d2d.dir/clean
 
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/plotTrajectory.dir
+# Target rules for target CMakeFiles/PoseEstimator2d2d.dir
 
 # All Build rule for target.
-CMakeFiles/plotTrajectory.dir/all:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/depend
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles --progress-num=5,6 "Built target plotTrajectory"
-.PHONY : CMakeFiles/plotTrajectory.dir/all
+CMakeFiles/PoseEstimator2d2d.dir/all:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/depend
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles --progress-num=1,2 "Built target PoseEstimator2d2d"
+.PHONY : CMakeFiles/PoseEstimator2d2d.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/plotTrajectory.dir/rule: cmake_check_build_system
+CMakeFiles/PoseEstimator2d2d.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/plotTrajectory.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/PoseEstimator2d2d.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 0
-.PHONY : CMakeFiles/plotTrajectory.dir/rule
+.PHONY : CMakeFiles/PoseEstimator2d2d.dir/rule
 
 # Convenience name for target.
-plotTrajectory: CMakeFiles/plotTrajectory.dir/rule
+PoseEstimator2d2d: CMakeFiles/PoseEstimator2d2d.dir/rule
 
-.PHONY : plotTrajectory
-
-# clean rule for target.
-CMakeFiles/plotTrajectory.dir/clean:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/clean
-.PHONY : CMakeFiles/plotTrajectory.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/coordinateTransform.dir
-
-# All Build rule for target.
-CMakeFiles/coordinateTransform.dir/all:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/depend
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles --progress-num=1,2 "Built target coordinateTransform"
-.PHONY : CMakeFiles/coordinateTransform.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/coordinateTransform.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/coordinateTransform.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 0
-.PHONY : CMakeFiles/coordinateTransform.dir/rule
-
-# Convenience name for target.
-coordinateTransform: CMakeFiles/coordinateTransform.dir/rule
-
-.PHONY : coordinateTransform
+.PHONY : PoseEstimator2d2d
 
 # clean rule for target.
-CMakeFiles/coordinateTransform.dir/clean:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/clean
-.PHONY : CMakeFiles/coordinateTransform.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/useGeometry.dir
-
-# All Build rule for target.
-CMakeFiles/useGeometry.dir/all:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/depend
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles --progress-num=7,8 "Built target useGeometry"
-.PHONY : CMakeFiles/useGeometry.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/useGeometry.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/useGeometry.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 0
-.PHONY : CMakeFiles/useGeometry.dir/rule
-
-# Convenience name for target.
-useGeometry: CMakeFiles/useGeometry.dir/rule
-
-.PHONY : useGeometry
-
-# clean rule for target.
-CMakeFiles/useGeometry.dir/clean:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/clean
-.PHONY : CMakeFiles/useGeometry.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/eigenMatrix.dir
-
-# All Build rule for target.
-CMakeFiles/eigenMatrix.dir/all:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/depend
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles --progress-num=3,4 "Built target eigenMatrix"
-.PHONY : CMakeFiles/eigenMatrix.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/eigenMatrix.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/eigenMatrix.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xbbao/SLAM_book_ws/src/myVIOSLAM/build/CMakeFiles 0
-.PHONY : CMakeFiles/eigenMatrix.dir/rule
-
-# Convenience name for target.
-eigenMatrix: CMakeFiles/eigenMatrix.dir/rule
-
-.PHONY : eigenMatrix
-
-# clean rule for target.
-CMakeFiles/eigenMatrix.dir/clean:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/clean
-.PHONY : CMakeFiles/eigenMatrix.dir/clean
+CMakeFiles/PoseEstimator2d2d.dir/clean:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/clean
+.PHONY : CMakeFiles/PoseEstimator2d2d.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

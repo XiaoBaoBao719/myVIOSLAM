@@ -111,164 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named plotTrajectory
+# Target rules for targets named PoseEstimator2d2d
 
 # Build rule for target.
-plotTrajectory: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 plotTrajectory
-.PHONY : plotTrajectory
+PoseEstimator2d2d: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 PoseEstimator2d2d
+.PHONY : PoseEstimator2d2d
 
 # fast build rule for target.
-plotTrajectory/fast:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/build
-.PHONY : plotTrajectory/fast
+PoseEstimator2d2d/fast:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/build
+.PHONY : PoseEstimator2d2d/fast
 
-#=============================================================================
-# Target rules for targets named coordinateTransform
+src/pose_estimation_2d_2d.o: src/pose_estimation_2d_2d.cpp.o
 
-# Build rule for target.
-coordinateTransform: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 coordinateTransform
-.PHONY : coordinateTransform
-
-# fast build rule for target.
-coordinateTransform/fast:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/build
-.PHONY : coordinateTransform/fast
-
-#=============================================================================
-# Target rules for targets named useGeometry
-
-# Build rule for target.
-useGeometry: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 useGeometry
-.PHONY : useGeometry
-
-# fast build rule for target.
-useGeometry/fast:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/build
-.PHONY : useGeometry/fast
-
-#=============================================================================
-# Target rules for targets named eigenMatrix
-
-# Build rule for target.
-eigenMatrix: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 eigenMatrix
-.PHONY : eigenMatrix
-
-# fast build rule for target.
-eigenMatrix/fast:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/build
-.PHONY : eigenMatrix/fast
-
-src/coordinateTransform.o: src/coordinateTransform.cpp.o
-
-.PHONY : src/coordinateTransform.o
+.PHONY : src/pose_estimation_2d_2d.o
 
 # target to build an object file
-src/coordinateTransform.cpp.o:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/src/coordinateTransform.cpp.o
-.PHONY : src/coordinateTransform.cpp.o
+src/pose_estimation_2d_2d.cpp.o:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/src/pose_estimation_2d_2d.cpp.o
+.PHONY : src/pose_estimation_2d_2d.cpp.o
 
-src/coordinateTransform.i: src/coordinateTransform.cpp.i
+src/pose_estimation_2d_2d.i: src/pose_estimation_2d_2d.cpp.i
 
-.PHONY : src/coordinateTransform.i
-
-# target to preprocess a source file
-src/coordinateTransform.cpp.i:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/src/coordinateTransform.cpp.i
-.PHONY : src/coordinateTransform.cpp.i
-
-src/coordinateTransform.s: src/coordinateTransform.cpp.s
-
-.PHONY : src/coordinateTransform.s
-
-# target to generate assembly for a file
-src/coordinateTransform.cpp.s:
-	$(MAKE) -f CMakeFiles/coordinateTransform.dir/build.make CMakeFiles/coordinateTransform.dir/src/coordinateTransform.cpp.s
-.PHONY : src/coordinateTransform.cpp.s
-
-src/eigenMatrix.o: src/eigenMatrix.cpp.o
-
-.PHONY : src/eigenMatrix.o
-
-# target to build an object file
-src/eigenMatrix.cpp.o:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/src/eigenMatrix.cpp.o
-.PHONY : src/eigenMatrix.cpp.o
-
-src/eigenMatrix.i: src/eigenMatrix.cpp.i
-
-.PHONY : src/eigenMatrix.i
+.PHONY : src/pose_estimation_2d_2d.i
 
 # target to preprocess a source file
-src/eigenMatrix.cpp.i:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/src/eigenMatrix.cpp.i
-.PHONY : src/eigenMatrix.cpp.i
+src/pose_estimation_2d_2d.cpp.i:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/src/pose_estimation_2d_2d.cpp.i
+.PHONY : src/pose_estimation_2d_2d.cpp.i
 
-src/eigenMatrix.s: src/eigenMatrix.cpp.s
+src/pose_estimation_2d_2d.s: src/pose_estimation_2d_2d.cpp.s
 
-.PHONY : src/eigenMatrix.s
-
-# target to generate assembly for a file
-src/eigenMatrix.cpp.s:
-	$(MAKE) -f CMakeFiles/eigenMatrix.dir/build.make CMakeFiles/eigenMatrix.dir/src/eigenMatrix.cpp.s
-.PHONY : src/eigenMatrix.cpp.s
-
-src/plotTrajectory.o: src/plotTrajectory.cpp.o
-
-.PHONY : src/plotTrajectory.o
-
-# target to build an object file
-src/plotTrajectory.cpp.o:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/src/plotTrajectory.cpp.o
-.PHONY : src/plotTrajectory.cpp.o
-
-src/plotTrajectory.i: src/plotTrajectory.cpp.i
-
-.PHONY : src/plotTrajectory.i
-
-# target to preprocess a source file
-src/plotTrajectory.cpp.i:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/src/plotTrajectory.cpp.i
-.PHONY : src/plotTrajectory.cpp.i
-
-src/plotTrajectory.s: src/plotTrajectory.cpp.s
-
-.PHONY : src/plotTrajectory.s
+.PHONY : src/pose_estimation_2d_2d.s
 
 # target to generate assembly for a file
-src/plotTrajectory.cpp.s:
-	$(MAKE) -f CMakeFiles/plotTrajectory.dir/build.make CMakeFiles/plotTrajectory.dir/src/plotTrajectory.cpp.s
-.PHONY : src/plotTrajectory.cpp.s
-
-src/useGeometry.o: src/useGeometry.cpp.o
-
-.PHONY : src/useGeometry.o
-
-# target to build an object file
-src/useGeometry.cpp.o:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/src/useGeometry.cpp.o
-.PHONY : src/useGeometry.cpp.o
-
-src/useGeometry.i: src/useGeometry.cpp.i
-
-.PHONY : src/useGeometry.i
-
-# target to preprocess a source file
-src/useGeometry.cpp.i:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/src/useGeometry.cpp.i
-.PHONY : src/useGeometry.cpp.i
-
-src/useGeometry.s: src/useGeometry.cpp.s
-
-.PHONY : src/useGeometry.s
-
-# target to generate assembly for a file
-src/useGeometry.cpp.s:
-	$(MAKE) -f CMakeFiles/useGeometry.dir/build.make CMakeFiles/useGeometry.dir/src/useGeometry.cpp.s
-.PHONY : src/useGeometry.cpp.s
+src/pose_estimation_2d_2d.cpp.s:
+	$(MAKE) -f CMakeFiles/PoseEstimator2d2d.dir/build.make CMakeFiles/PoseEstimator2d2d.dir/src/pose_estimation_2d_2d.cpp.s
+.PHONY : src/pose_estimation_2d_2d.cpp.s
 
 # Help Target
 help:
@@ -278,22 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... plotTrajectory"
-	@echo "... coordinateTransform"
-	@echo "... useGeometry"
-	@echo "... eigenMatrix"
-	@echo "... src/coordinateTransform.o"
-	@echo "... src/coordinateTransform.i"
-	@echo "... src/coordinateTransform.s"
-	@echo "... src/eigenMatrix.o"
-	@echo "... src/eigenMatrix.i"
-	@echo "... src/eigenMatrix.s"
-	@echo "... src/plotTrajectory.o"
-	@echo "... src/plotTrajectory.i"
-	@echo "... src/plotTrajectory.s"
-	@echo "... src/useGeometry.o"
-	@echo "... src/useGeometry.i"
-	@echo "... src/useGeometry.s"
+	@echo "... PoseEstimator2d2d"
+	@echo "... src/pose_estimation_2d_2d.o"
+	@echo "... src/pose_estimation_2d_2d.i"
+	@echo "... src/pose_estimation_2d_2d.s"
 .PHONY : help
 
 

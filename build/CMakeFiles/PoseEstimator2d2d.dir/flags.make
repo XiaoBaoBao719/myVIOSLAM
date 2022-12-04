@@ -6,5 +6,5 @@ CXX_FLAGS = -std=c++14 -O3 -DNDEBUG
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/xbbao/SLAM_book_ws/src/myVIOSLAM/usr/local/include/eigen3 
+CXX_INCLUDES = -I/home/xbbao/SLAM_book_ws/src/myVIOSLAM/usr/local/include/eigen3 -isystem /usr/local/include/opencv4 
 
