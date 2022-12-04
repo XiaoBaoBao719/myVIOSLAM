@@ -23,6 +23,15 @@ void pose_estimation_2d2d(
 
 cv::Point2d pixel2cam(const cv::Point2d &p, const cv::Mat &K);
 
+void triangulation(
+    const std::vector<cv::KeyPoint> &keypoints_1,
+    const std::vector<cv::KeyPoint> &keypoints_2,
+    const std::vector<cv::DMatch> &matches,
+    const cv::Mat &R, const cv::Mat &t,
+    std::vector<cv::Point3d> &points3d 
+);
+
+
 int main(int argc, char **argv) {
     if (argc != 3) {
         cout << "usage: pose estimation_2d2d img1 img2" << endl;
@@ -63,7 +72,15 @@ int main(int argc, char **argv) {
         cv::Mat y2 = (cv::Mat_<double>(3,1) << pt2.x, pt2.y, 1);
 
         cv::Mat d = y2.t() * t_x * R * y1;
-        cout << "epipolar constraint: " << d << endl;
+        // cout << "epipolar constraint: " << d << endl;
+    }
+
+    // Estimate location of keypoints with linear least squares
+    std::vector<cv::Point3d> points3d;
+    triangulation(keypoints_1, keypoints_2, matches, R, t, points3d);
+
+    for (cv::Point3d mp : points3d) {
+        cout << "map point: " << mp << endl;
     }
 
     return 0;
@@ -165,4 +182,46 @@ void pose_estimation_2d2d(
 
     cout << "R is " << endl << R << endl;
     cout << "t is " << endl << t << endl;
+}
+
+void triangulation(
+    const std::vector<cv::KeyPoint> &keypoints_1,
+    const std::vector<cv::KeyPoint> &keypoints_2,
+    const std::vector<cv::DMatch> &matches,
+    const cv::Mat &R, const cv::Mat &t,
+    std::vector<cv::Point3d> &points3d) {
+
+    cv::Mat T1 = (cv::Mat_<double>(3,4) <<  1, 0, 0, 0,
+                                            0, 1, 0, 0,
+                                            0, 0, 1, 0);    // identity transformation matrix
+    cv::Mat T2 = (cv::Mat_<double>(3,4) <<
+        R.at<double>(0,0), R.at<double>(0,1), R.at<double>(0,2), t.at<double>(0,0),
+        R.at<double>(1,0), R.at<double>(1,1), R.at<double>(1,2), t.at<double>(1,0),
+        R.at<double>(2,0), R.at<double>(2,1), R.at<double>(2,2), t.at<double>(2,0) );   // non-homogeneous transformation matrix
+
+    cv::Mat K = (cv::Mat_<double>(3,3) << 520.9,    0,      325.1, 
+                                            0,      521.0,  249.7, 
+                                            0,      0,      1); // Camera intrinsics matrix
+
+    std::vector<cv::Point2f> pts_1, pts_2;
+
+    // Convert pixel coordinates into camera 2d frame
+    for (cv::DMatch m : matches) {
+        pts_1.push_back(pixel2cam(keypoints_1[m.queryIdx].pt, K));
+        pts_2.push_back(pixel2cam(keypoints_2[m.trainIdx].pt, K));
+    }
+
+    cv::Mat pts_4d;
+
+    cv::triangulatePoints(T1, T2, pts_1, pts_2, pts_4d);
+
+    // Convert 4d points into non-homogeneous coordinates
+    for (int i = 0; i < pts_4d.cols; i++) {
+        cv::Mat x = pts_4d.col(i);
+        x /= pts_4d.at<float>(3,0);
+
+        cv::Point3d map_point(x.at<float>(0,0), x.at<float>(1,0), x.at<float>(2,0));
+
+        points3d.push_back(map_point);
+    }
 }
