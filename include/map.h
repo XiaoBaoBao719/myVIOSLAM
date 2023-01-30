@@ -2,6 +2,10 @@
 #ifndef MYVIOSLAM_MAP_H
 #define MYVIOSLAM_MAP_H
 
+#include "common_include.h"
+#include "mappoint.h"
+#include "frame.h"
+
 namespace myvioslam {
 
 struct MapPoint;
@@ -41,7 +45,7 @@ public:
         return active_keyframes_;
     }
 
-    void ClearMap();
+    void CleanMap();
 
 private:
     // member functions

@@ -3,6 +3,8 @@
 #ifndef MYVIOSLAM_FRAME_H
 #define MYVIOSLAM_FRAME_H
 
+#include "common_include.h"
+
 namespace myvioslam {
 
 struct MapPoint;
@@ -10,7 +12,7 @@ struct Feature;
 
 struct Frame {
     public: 
-        EIGEN_MAKE_ALIGNED_OPEPRATOR_NEW;
+        EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
         typedef std::shared_ptr<Frame> Ptr;
 
         unsigned long _id = 0;          // frame id
@@ -33,7 +35,7 @@ struct Frame {
                 const cv::Mat &rightimg);
 
         // set and get the pose, make it thread safe
-        SE3 Pose() {
+        SE3 Pose(SE3 pose) {
             std::unique_lock<std::mutex> lock(pose_mutex_);
             pose_ = pose;
         }

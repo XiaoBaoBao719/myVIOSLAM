@@ -3,6 +3,8 @@
 #ifndef MYVIOSLAM_MAPPOINT_H
 #define MYVIOSLAM_MAPPOINT_H
 
+#include "common_include.h"
+
 namespace myvioslam{
 
 struct Frame;
@@ -12,21 +14,21 @@ struct MapPoint {
     EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
     typedef std::shared_ptr<MapPoint> Ptr;
     unsigned long id_ = 0;                      // map point id
-    Eigen::Vec3 pos_ = Eigen::Vec3::Zero();     // position in the world
+    Vec3 pos_ = Vec3::Zero();     // position in the world
     std::mutex data_mutex_;
     int num_observed_times_ = 0;                // num of features that have seen this point
     std::list<std::weak_ptr<Feature>> observations_;
 
     MapPoint() {}
 
-    MapPoint(long id, Eigen::Vec3 position);
+    MapPoint(long id, Vec3 position);
 
-    Eigen::Vec3 Position() {
+    Vec3 Position() {
         std::unique_lock<std::mutex> lock(data_mutex_);
         return pos_;
     }
 
-    void SetPosition(const Eigen::Vec3 &pos) {
+    void SetPosition(const Vec3 &pos) {
         std::unique_lock<std::mutex> lock(data_mutex_);
         pos_ = pos;
     }
@@ -40,7 +42,7 @@ struct MapPoint {
     void RemoveObservation(std::shared_ptr<Feature> feature);
 
     std::list<std::weak_ptr<Feature>> GetObservations() {
-        std::unique_locK<std::mutex> lock(data_mutex_);
+        std::unique_lock<std::mutex> lock(data_mutex_);
         return observations_;
     }
 
