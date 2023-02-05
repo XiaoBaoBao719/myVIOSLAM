@@ -7,6 +7,7 @@
 
 #include "frame.h"
 #include "map.h"
+#include "camera.h"
 
 namespace myvioslam {
 
@@ -22,6 +23,8 @@ public:
     typedef std::shared_ptr<Frontend> Ptr;
 
     Frontend();
+
+    Frontend(Viewer viewer);
 
     bool AddFrame(Frame::Ptr frame);
 

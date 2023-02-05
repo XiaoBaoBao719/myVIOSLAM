@@ -1,7 +1,12 @@
 #pragma once
 
-#ifdef MYVIOSLAM_FEATURE_H
+#ifndef MYVIOSLAM_FEATURE_H
 #define MYVIOSLAM_FEATURE_H
+
+#include "common_include.h"
+#include "frame.h"
+#include "mappoint.h"
+
 
 namespace myvioslam {
 

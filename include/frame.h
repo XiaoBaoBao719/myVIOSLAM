@@ -15,7 +15,7 @@ struct Frame {
         EIGEN_MAKE_ALIGNED_OPERATOR_NEW;
         typedef std::shared_ptr<Frame> Ptr;
 
-        unsigned long _id = 0;          // frame id
+        unsigned long id_ = 0;          // frame id
         unsigned long keyframe_id = 0;  // keyframe id
         bool is_keyframe = false;       // if frame is a keyframe
         double timestamp;               // frame time stamp
@@ -28,6 +28,8 @@ struct Frame {
         // features in the right image that correspond! nullptr if no corresponding
         std::vector<std::shared_ptr<Feature>> features_right_;
 
+
+
     public:     // data members
         Frame() {}
 
@@ -35,9 +37,14 @@ struct Frame {
                 const cv::Mat &rightimg);
 
         // set and get the pose, make it thread safe
-        SE3 Pose(SE3 pose) {
+        void SetPose(SE3 pose) {
             std::unique_lock<std::mutex> lock(pose_mutex_);
             pose_ = pose;
+        }
+
+        SE3 Pose() {
+            std::unique_lock<std::mutex> lock(pose_mutex_);
+            return pose_;
         }
 
         // set keyframe and keyframe id

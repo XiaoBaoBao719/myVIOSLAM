@@ -19,6 +19,7 @@ public:
     typedef std::unordered_map<unsigned long, MapPoint::Ptr> LandmarksType;     // id association of map points to landmarks
     typedef std::unordered_map<unsigned long, Frame::Ptr> KeyFramesType;        // id association of frames to keyframes
 
+public:
     Map() {}
 
     void InsertKeyFrame(Frame::Ptr frame);
@@ -52,7 +53,7 @@ private:
     void RemoveOldKeyFrames();
 
     // member data fields
-    std::mutex data_mutux_;
+    std::mutex data_mutex_;
     LandmarksType landmarks_;
     LandmarksType active_landmarks_;
     KeyFramesType keyframes_;
